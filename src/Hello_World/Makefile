@@ -1,8 +1,8 @@
 # Makefile for entire project
-build/hello_world: build/hello_world.o
-	gcc -o build/hello_world build/hello_world.o -no-pie
-build/hello_world.o: src/hello_world.asm
-	nasm -f elf64 -g -F dwarf src/hello_world.asm -o build/hello_world.o -l build/hello_world.lst
+../../build/hello_world: ../../build/hello_world.o
+	gcc -o build/hello_world ../../build/hello_world.o -no-pie
+../../build/hello_world.o: hello_world.asm
+	nasm -f elf64 -g -F dwarf hello_world.asm -o ../../build/hello_world.o -l ../../build/hello_world.lst
 
 # 1. NASM creates the .o and .lst files.
 # - .lst is not necessary for the computer,

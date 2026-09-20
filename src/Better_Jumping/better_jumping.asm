@@ -2,18 +2,18 @@
 extern printf
 section .data
     number dq 5
-    fmt db "The sum from 0 to %ld is %ld",10,0 ; Long Decimal a nie decimal poniewaz chcemy miec szerokosc 64 bitow\ a nie samo Decimal ktory ma 32 biity szerokosci
+    fmt db "The sum from 0 to %ld is %ld",10,0 ; %ld prints a C long integer, which is 64 bits on Linux x86-64
 section .bss
 section .text
     global main
 main:
     push rbp
     mov rbp, rsp
-    mov rcx, [number] ; Przypisujemy rejestrowi rcx wartość 5
+    mov rcx, [number] ; Load the value 5 into the rcx register
     mov rax, 0
     bloop:
         add rax, rcx
-        loop bloop ; Pętla ktora z obiegiem zmienjsza wartosc rcx
+        loop bloop ; Decrement rcx and repeat while it is not zero
     mov rdi, fmt
     mov rsi, [number]
     mov rdx, rax
