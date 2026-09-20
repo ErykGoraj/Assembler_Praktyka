@@ -1,4 +1,4 @@
-; betterloop
+; better jumping
 extern printf
 section .data
     number dq 5

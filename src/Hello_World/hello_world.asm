@@ -1,4 +1,4 @@
-; hello.asm
+; hello world
 section .data
 	msg db "Hello, World!",0
 section .bss
