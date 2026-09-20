@@ -11,4 +11,3 @@ build/hello_world.o: src/hello_world.asm
 
 # 2. The hello_world target can now be built.
 # - GCC links hello_world.o and creates the final executable program.
- 
